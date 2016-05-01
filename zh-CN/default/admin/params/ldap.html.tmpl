@@ -1,0 +1,36 @@
+[%# This Source Code Form is subject to the terms of the Mozilla Public
+  # License, v. 2.0. If a copy of the MPL was not distributed with this
+  # file, You can obtain one at http://mozilla.org/MPL/2.0/.
+  #
+  # This Source Code Form is "Incompatible With Secondary Licenses", as
+  # defined by the Mozilla Public License, v. 2.0.
+  #%]
+
+[%
+   title = "LDAP"
+   desc = "在选择 LDAP 做为认证方式前，请先设定"
+%]
+
+[% param_descs = {
+  LDAPserver => "你的 LDAP 服务器的地址（以及连接端口）。" _
+                "例如： <code>ldap.company.com</code> 或 <code>ldap.company.com:portnum</code> 。<br>" _
+                "也可以使用 URI 语法，例如 ldaps://ldap.company.com （安全连线）或 " _
+                "ldapi://%2fvar%2flib%2fldap_sock （以 socket 为基础的本机连线）。<br>" _
+                "若有多个服务器名称或 URI ，可以用半角逗号 (,) 分隔；会轮流试到连上为止。",
+
+  LDAPstarttls => "当可以接受 LDAP 正常连线到服务器时，是否要求通讯加密。",
+
+  LDAPbinddn => "如果你的 LDAP 服务器需要你使用 binddn 及密码，而非匿名使用 bind 时，在此输入。" _
+                "例如： cn=default,cn=user:password 。<br>" _
+                "若为匿名使用 bind 时，请设为空白。",
+
+  LDAPBaseDN => "认证用户所使用的 BaseDN 。例如 ou=People,o=Company 。",
+
+  LDAPuidattribute => "包括用户帐号的属性名称。",
+
+  LDAPmailattribute => "在目录中包含电子邮件地址，做为 Bugzilla 帐号使用的用户的属性名。<br>" _
+                       "若设为空白，则 Bugzilla 会使用 LDAP 的用户名称做为 Bugzilla 的用户名称。" _
+                       "你可能也会想要设定 \"emailsuffix\" 參数。",
+
+  LDAPfilter => "过滤有效的用户列表所使用，到 AND 的过滤条件；和 <var>LDAPuidattribute</var> 一并使用。" }
+%]
