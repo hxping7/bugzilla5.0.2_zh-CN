@@ -7,8 +7,8 @@ https://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-5.0.2.tar.gz
 
 # usage：
 
-* 1：please put this foldor to your bugzilla template foldor，such as：
-/var/www/html/bugzilla/template#     
+* 1：please put this foldor to your bugzilla template foldor，such as：      
+/var/www/html/bugzilla/template#      
 en/    
 zh-CN/    
 * 2: /var/www/html/bugzilla# ./checksetup.pl 
