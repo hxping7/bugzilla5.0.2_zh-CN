@@ -19,7 +19,7 @@
       <p>
       [% FOREACH comment = new_comments.reverse %]
         <div>
-          [% IF comment.count %]
+          [% IF comment.count || isnew %]
             <b>
               来自项目「[% bug.product %]」 [% INCLUDE bug/link.html.tmpl bug = bug, link_text = "$terms.bug $bug.id",
                                                full_url = 1, user = to_user %]: [[% bug.short_desc %]]
@@ -105,7 +105,7 @@
       [% END %]
       [% IF isnew %]
         <tr>
-          <th>[% field_label FILTER html %]</th>
+          <th bgcolor="#999999">[% field_label FILTER html %]</th>
           <td>
             [% IF change.field_name == "bug_id" %]
               [% INCLUDE bug/link.html.tmpl bug = bug, link_text = new_value, full_url = 1, user = to_user %]

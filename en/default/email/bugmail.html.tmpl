@@ -19,7 +19,7 @@
       <p>
       [% FOREACH comment = new_comments.reverse %]
         <div>
-          [% IF comment.count %]
+          [% IF comment.count || isnew %]
             <b>¡¸[% bug.product %]¡¹ [% INCLUDE bug/link.html.tmpl bug = bug, link_text = "Comment # ${comment.count}",
                                              comment_num = comment.count, full_url = 1, user = to_user %]
               on [% INCLUDE bug/link.html.tmpl bug = bug, link_text = "$terms.bug $bug.id",
@@ -104,7 +104,7 @@
       [% END %]
       [% IF isnew %]
         <tr>
-          <th>[% field_label FILTER html %]</th>
+          <th bgcolor="#999999">[% field_label FILTER html %]</th>
           <td>
             [% IF change.field_name == "bug_id" %]
               [% INCLUDE bug/link.html.tmpl bug = bug, link_text = new_value, full_url = 1, user = to_user %]
