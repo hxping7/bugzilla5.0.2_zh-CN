@@ -75,7 +75,7 @@ function PutDescription() {
   </form>
 
 <p>
-  查看搜索结果。如果显示<kbd><b>[% terms.zeroSearchResults %]</b></kbd>的讯息，代表 [% terms.Bugzilla %] 没找到符合的 [% terms.bugs %] 。看有沒有打錯字，或試試其他關鍵字。如果你找到的 [% terms.bug %] 看起來有點像你遇到的，請在後頭加上一些資訊，而不是新增一個 [% terms.bug %] 。
+  查看搜索结果。如果显示<kbd><b>[% terms.zeroSearchResults %]</b></kbd>的信息，代表 [% terms.Bugzilla %] 没找到符合的 [% terms.bugs %] 。看有沒有打错字，或试试其他关键字。如果你找到的 [% terms.bug %] 看起来有点像你遇到的，请在后面加上一些评论，而不是新增一个 [% terms.bug %] 。
 </p>
 
 
@@ -120,7 +120,7 @@ function PutDescription() {
       </select>
 
       <div id="description" class="comment bz_default_hidden">
-        选择一项模块来看它的描述。
+        选择一个模块来看它的描述。
       </div>
 
       <p>
@@ -187,11 +187,11 @@ function PutDescription() {
       </p>
       <p>
         <kbd>
-          <span class="bad">不好的例子</span>：信件当掉
+          <span class="bad">不好的例子</span>：信件崩溃
         </kbd>
         <br>
         <kbd>
-          <span class="good">好的例子</span>：当检查是否有新的 POP 信件时，关掉信件窗口会当掉
+          <span class="good">好的例子</span>：当检查是否有新的 POP 信件时，关掉信件窗口会崩溃
         </kbd>
       </p>
     </td>
@@ -211,12 +211,12 @@ function PutDescription() {
       </p>
       <p>
         <kbd>
-          <span class="bad">不好的例子</span>： Mozilla 又当了，垃圾！
+          <span class="bad">不好的例子</span>： Mozilla 又崩溃了，垃圾！
         </kbd>
         <br>
         <kbd>
           <span class="good">好的例子</span>：
-          我在书签管理员中排序时当掉。<br>
+          我在书签管理员中排序时崩溃了。<br>
           在那之后，我最上层的书签 Q 到 Z 开头的都蒸发了。
         </kbd>
       </p>
@@ -302,7 +302,7 @@ function PutDescription() {
         或任何关于<b>你的电脑配置</b>的信息。详细信息，例如 <b>stack trace</b> 或
         <b>HTML testcase</b> ，应该使用「新增附件」链接。如果你觉得 build 设定也有关联，请在网址列输入
         <kbd>about:buildconfig</kbd> ，并一并输入该信息。<br><br>
-        如果你反馈的是当掉的情况，请注明在哪个模块里软件当掉（例如：<kbd>在 gkhtml.dll 发生应用程序错误</kbd>。）
+        如果你反馈的是软件崩溃的情况，请注明在哪个模块里软件崩溃了（例如：<kbd>在 gkhtml.dll 发生应用程序错误</kbd>。）
       </p>
     </td>
   </tr>

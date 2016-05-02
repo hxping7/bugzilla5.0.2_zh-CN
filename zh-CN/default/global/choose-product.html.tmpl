@@ -18,14 +18,14 @@
   [% subheader = "选择项目" %]
   [% h2 = BLOCK %]
     [% IF Param('useclassification') %]其次[% ELSE %]首先[% END %]，
-    在输入 [% terms.bug %] 之前，你必须先选择一项项目：
+    在创建 [% terms.bug %] 之前，你必须先选择一个项目：
   [% END %]
 [% ELSIF target == "describecomponents.cgi" %]
   [% title = "浏览" %]
   [% h2 = "选择要浏览的项目分类：" %]
 [% END %]
 
-[% DEFAULT title = "选择一项项目" %]
+[% DEFAULT title = "选择一个项目" %]
 [% PROCESS global/header.html.tmpl %]
 
 [% USE Bugzilla %]

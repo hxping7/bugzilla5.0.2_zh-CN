@@ -1180,7 +1180,7 @@
     [% admindocslinks = {'products.html'   => '管理项目',
                          'components.html' => '新增模块'} %]
     很抱歉，项目 <em>[% product.name FILTER html %]</em>
-    中必须至少有一项模块，才能够输入 [% terms.bug %] 。<br>
+    中必须至少有一个模块，才能够输入 [% terms.bug %] 。<br>
     [% IF user.in_group("editcomponents", product.id) %]
       <a href="editcomponents.cgi?action=add&amp;product=[% product.name FILTER uri %]">新增模块</a>。
     [% ELSE %]
@@ -1430,7 +1430,7 @@
     [% title = BLOCK %]项目中还有[% terms.Bugs %][% END %]
     [% admindocslinks = {'products.html' => '管理项目'} %]
     在此项目中还有 [% nb FILTER html %] 个 [% terms.bugs %] ！
-    在你删除此项目之前，你必须先搬移这些 [% terms.bugs %] 到另一项项目中。
+    在你删除此项目之前，你必须先搬移这些 [% terms.bugs %] 到另一个项目中。
 
   [% ELSIF error == "product_illegal_group" %]
     [% title = "无效的群组" %]
@@ -1560,7 +1560,7 @@
 
   [% ELSIF error == "require_component" %]
     [% title = "需要输入模块" %]
-    要将此 [% terms.bug %] 归档，必须先选择一项模块。
+    要将此 [% terms.bug %] 归档，必须先选择一个模块。
     有必要的话，就用猜的。
 
   [% ELSIF error == "require_new_password" %]
@@ -1780,7 +1780,7 @@
     很抱歉，但你并未被允许将意见或附件标记或取消隐藏。
 
   [% ELSIF error == "user_not_involved" %]
-    [% title = "使用者未參與 $terms.Bug" %]
+    [% title = "使用者未参与 $terms.Bug" %]
     很抱歉，但你并未参与 [% terms.Bug %] [%+
         bug_id FILTER bug_link(bug_id) FILTER none %] 。
 

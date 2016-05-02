@@ -174,7 +174,7 @@ TUI_hide_default('attachment_text_field');
           <td>
             <fieldset>
               <legend>模块描述</legend>
-              <div id="comp_desc" class="comment">选择一项模块來阅读描述。</div>
+              <div id="comp_desc" class="comment">选择一个模块来阅读描述。</div>
             </fieldset>
           </td>
         </tr>
@@ -392,7 +392,7 @@ TUI_hide_default('attachment_text_field');
     [% INCLUDE "bug/field-label.html.tmpl"
       field = bug_fields.bug_file_loc editable = 1
     %]
-    <td colspan="3" class="field_value">
+    <td colspan="3" class="field_value"> 
       <input name="bug_file_loc" id="bug_file_loc" class="text_input"
              size="40" value="[% bug_file_loc FILTER html %]">
     </td>

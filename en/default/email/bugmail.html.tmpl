@@ -20,10 +20,10 @@
       [% FOREACH comment = new_comments.reverse %]
         <div>
           [% IF comment.count %]
-            <b>[% INCLUDE bug/link.html.tmpl bug = bug, link_text = "Comment # ${comment.count}",
+            <b>¡¸[% bug.product %]¡¹ [% INCLUDE bug/link.html.tmpl bug = bug, link_text = "Comment # ${comment.count}",
                                              comment_num = comment.count, full_url = 1, user = to_user %]
               on [% INCLUDE bug/link.html.tmpl bug = bug, link_text = "$terms.bug $bug.id",
-                                               full_url = 1, user = to_user %]
+                                               full_url = 1, user = to_user %]: [[% bug.short_desc %]] 
               from [% INCLUDE global/user.html.tmpl user = to_user, who = comment.author %]</b>
           [% END %]
         <pre>[% comment.body_full({ wrap => 1 }) FILTER quoteUrls(bug, comment, to_user) %]</pre>
@@ -82,8 +82,8 @@
                                          full_url = 1, user = to_user %],
           which changed state.
         [% ELSE %]
-          [% INCLUDE global/user.html.tmpl user = to_user, who = change.who %] changed
-          [%+ INCLUDE bug/link.html.tmpl bug = bug, link_text = "$terms.bug $bug.id", full_url = 1, user = to_user %]
+           <i>[% INCLUDE global/user.html.tmpl user = to_user, who = change.who %]</i> changed item ¡¸[% bug.product %]¡¹ 
+          [%+ INCLUDE bug/link.html.tmpl bug = bug, link_text = "$terms.bug $bug.id", full_url = 1, user = to_user %]: [[% bug.short_desc %]]
         [% END %]
           <br>
           [% IF in_table == 0 %]
@@ -91,9 +91,9 @@
              [% SET in_table = 1 %]
           [% END %]
           <tr>
-            <th>What</th>
-            <th>Removed</th>
-            <th>Added</th>
+            <th bgcolor="#999999">What</th>
+            <th bgcolor="#999999">Removed</th>
+            <th bgcolor="#999999">Added</th>
           </tr>
       [% END %]
 
